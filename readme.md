@@ -1,3 +1,2 @@
-# Repository for class project
-
-This readme is a placeholder that should be replaced
+`npm run build` builds the application to `public/bundle.js`
+`npm start` launches a server @(http://localhost:5000)
