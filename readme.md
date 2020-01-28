@@ -1,2 +1,2 @@
-`npm run build` builds the application to `public/bundle.js`
+`npm run build` builds the application to `public/bundle.js` \n
 `npm start` launches a server @(http://localhost:5000)
