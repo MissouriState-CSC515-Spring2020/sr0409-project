@@ -13,5 +13,7 @@
     "start": "serve public"
   },
   "license": "NO LICENCE",
-  "author": { "name": "Stanley Razumov"}
+  "author": {
+    "name": "Stanley Razumov"
+  }
 }
