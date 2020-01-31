@@ -12,5 +12,6 @@
     "build": "rollup -c",
     "start": "serve public"
   },
-  "license": "NO LICENCE"
+  "license": "NO LICENCE",
+  "author": { "name": "Stanley Razumov"}
 }
