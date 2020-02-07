@@ -46,6 +46,14 @@ img.zoom {
     -o-transition: all .3s ease-in-out;
     -ms-transition: all .3s ease-in-out;
 }
+#description_block {
+  display: flex;
+  justify-content: center;
+  }
+  
+#description_block img {
+    max-width: 50%;
+  }
 
 .nav-link{
   font-size: 32px;
@@ -54,6 +62,9 @@ img.zoom {
 @media only screen and (max-width: 768px){
   body {
     max-width: 100%;
+  }
+  .description_block img {
+    max-width: inherit;
   }
   
 }
