@@ -5,7 +5,7 @@ import replace from "rollup-plugin-replace";
 
 const NODE_ENV = process.env.NODE_ENV || "development";
 export default {
-	input: 'src/recent.js',
+	input: 'src/index.js',
 	output: {
 		file: 'public/bundle.js',
 		format: 'iife', 
@@ -19,6 +19,19 @@ export default {
 		  exclude: "node_modules/**"
 		}),
 		resolve(),
-		commonjs()
+		commonjs({
+			include: 
+			  'node_modules/**'
+			,
+			exclude: 
+			  'node_modules/process-es6/**'
+			,
+			namedExports: {
+			  'node_modules/react/index.js': ['Children', 'isValidElementType', 'Component', 'PropTypes', 'createElement'],
+			  'node_modules/react-dom/index.js': ['render', 'Component','ReactDOM'],
+			  'node_modules/react-is/index.js': ['render', 'Component', 'isValidElementType'],
+			  'node_modules/react-router-dom/esm/react-router-dom.js': ['ReactDOM']
+			}
+		  })
 	  ]
 };

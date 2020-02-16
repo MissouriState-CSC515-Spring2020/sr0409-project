@@ -27,5 +27,8 @@
   "license": "NO LICENCE",
   "author": {
     "name": "Stanley Razumov"
+  },
+  "dependencies": {
+    "react-router-dom": "^5.1.2"
   }
 }
