@@ -22,7 +22,7 @@ class Recent extends Component {
         <div class="row">
         
           <div class="col-lg-3">
-            <Link to="/Details"><img  src="img\cats\1.jpg" class="zoom img-fluid"  alt=""/></Link>
+            <NavLink to="/Details"><img  src="img\cats\1.jpg" class="zoom img-fluid"  alt=""/></NavLink>
           </div>
           
           <div class="col-lg-3">

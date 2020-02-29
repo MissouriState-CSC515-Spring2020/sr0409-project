@@ -4,7 +4,7 @@ import Main from "./Main";
 import {
   BrowserRouter
 } from "react-router-dom";
-import Recent from "./Recent";
+
 ReactDOM.render(
   <BrowserRouter>
      <Main/>
