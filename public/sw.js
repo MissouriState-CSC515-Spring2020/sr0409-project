@@ -1,10 +1,9 @@
 console.log("SW Started");
 const CACHE_NAME = 'ourcache';
-  const OFFLINE_URL = 'offline.html';
+  const OFFLINE_URL = 'offline';
   let urlsToCache = [
     'manifest.json',
-    'offline.html',
-    'index.html',
+    '/',
     'styles.css',
     'bundle.js'
   ];
@@ -16,6 +15,7 @@ const CACHE_NAME = 'ourcache';
       })
     );
   });
+
   self.addEventListener('fetch', function(event) {
     event.respondWith(
       caches.match(event.request)
