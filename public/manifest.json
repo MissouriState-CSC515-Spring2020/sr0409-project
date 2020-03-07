@@ -5,6 +5,7 @@
     "start_url": "/",
     "display": "standalone",
     "background_color": "#fff",
+    "theme_color":"#989898",
     "description": "A Photo Gallery",
     "icons": [{
       
