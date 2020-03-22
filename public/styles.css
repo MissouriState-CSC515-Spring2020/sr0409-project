@@ -16,6 +16,9 @@ body {
   box-shadow: 0px 10px 10px black;
 }
 
+p {
+  padding: 10px;
+}
 .col-lg-3 {
   margin: 15px;
 } 
@@ -59,9 +62,9 @@ img.zoom {
   font-size: 32px;
 }
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 1120px){
   body {
-    max-width: 100%;
+    min-width: 100%;
   }
   .description_block img {
     max-width: inherit;
