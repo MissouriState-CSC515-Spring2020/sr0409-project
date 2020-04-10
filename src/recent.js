@@ -6,7 +6,8 @@ import {
 } from "react-router-dom";
 import Details from "./Details";
 const KEY = "AIzaSyBseWKhYPoOpRVoODtWoYBSvSUk_VOrjsU";
-const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=PLV7_SDtanVwgaQ0ReDzE16NlkkbmVGeiw&key=${KEY}`;
+const PL_ID = "PLV7_SDtanVwgaQ0ReDzE16NlkkbmVGeiw";
+const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${PL_ID}&key=${KEY}`;
 
 class Recent extends Component {
   constructor(props) {
