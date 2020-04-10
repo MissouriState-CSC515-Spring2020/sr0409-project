@@ -58,8 +58,6 @@ class Recent extends Component {
                 <Route path="/Details" component={Details}/>
               </Switch>
             </div>
-            
-          
         </div>
       );	
     }
