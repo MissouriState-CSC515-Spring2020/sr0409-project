@@ -29,6 +29,7 @@
     "name": "Stanley Razumov"
   },
   "dependencies": {
-    "react-router-dom": "^5.1.2"
+    "react-router-dom": "^5.1.2",
+    "rollup-plugin-workbox": "^5.0.1"
   }
 }

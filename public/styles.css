@@ -8,7 +8,6 @@ body {
   background-color:#1d1d1d !important;
   font-family: "Asap", sans-serif;
   color:#989898;
-  margin:10px;
   font-size:16px;
   min-width: 50%;
   max-width: 50%;
@@ -44,10 +43,7 @@ img.zoom {
     height: 200px;
     border-radius:5px;
     object-fit:cover;
-    -webkit-transition: all .3s ease-in-out;
-    -moz-transition: all .3s ease-in-out;
-    -o-transition: all .3s ease-in-out;
-    -ms-transition: all .3s ease-in-out;
+
 }
 #description_block {
   display: flex;
@@ -65,9 +61,10 @@ img.zoom {
 @media only screen and (max-width: 1120px){
   body {
     min-width: 100%;
+    box-shadow: none;
   }
-  .description_block img {
-    max-width: inherit;
+  img.zoom {
+    height: 50vh;
   }
   
 }
