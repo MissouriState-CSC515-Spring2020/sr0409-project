@@ -5,7 +5,7 @@ import {
     NavLink
     
   } from "react-router-dom";
-  import('./Details').then(({ default: Details }));
+import LazyDetails from "./LazyDetails"
 class Cats extends Component {
 	componentDidMount() {
 		document.title = "Cats"
@@ -34,7 +34,7 @@ class Cats extends Component {
             </div>
             
             
-                <Route path="/Details" component={Details}/>
+                <Route path="/Details" component={LazyDetails}/>
                 
            
 	    </div>

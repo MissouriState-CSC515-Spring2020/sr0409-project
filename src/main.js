@@ -5,11 +5,9 @@ import {
   Switch
 } from "react-router-dom";
 
-import('./recent').then(({ default: recent }));
-
-import('./Cats').then(({ default: Cats }));
-import('./recent').then(({ default: recent }));
-import('./Details').then(({ default: Details }));
+import Recent from "./recent"
+import LazyCats from "./LazyCats"
+import LazyDetails from "./LazyDetails"
 
 class Main extends Component {
 	
@@ -43,8 +41,8 @@ class Main extends Component {
 				<Switch>
 					<Route exact path="/" component={Recent}/>
 					<Route path="/Recent" component={Recent}/>
-					<Route path="/Cats" component={Cats}/>
-					<Route path="/Details" component={Details}/>
+					<Route path="/Cats" component={LazyCats}/>
+					<Route path="/Details" component={LazyDetails}/>
 				</Switch>
 				
 			</div>
