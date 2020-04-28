@@ -5,7 +5,7 @@ import {
     NavLink
     
   } from "react-router-dom";
-  import Details from "./Details";
+  import('./Details').then(({ default: Details }));
 class Cats extends Component {
 	componentDidMount() {
 		document.title = "Cats"
