@@ -7,8 +7,8 @@ const NODE_ENV = process.env.NODE_ENV || "development";
 export default {
 	input: 'src/index.js',
 	output: {
-		file: 'public/bundle.js',
-		format: 'iife', 
+		dir: 'public/dist',
+		format: 'esm', 
 		sourcemap: true
 	},
 	plugins: [

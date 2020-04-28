@@ -4,9 +4,13 @@ import {
   NavLink,
   Switch
 } from "react-router-dom";
-import Recent from "./Recent";
-import Details from "./Details";
-import Cats from "./Cats";
+
+import('./recent').then(({ default: recent }));
+
+import('./Cats').then(({ default: Cats }));
+import('./recent').then(({ default: recent }));
+import('./Details').then(({ default: Details }));
+
 class Main extends Component {
 	
   render() {
