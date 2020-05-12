@@ -2,71 +2,65 @@ import React, { Component } from "react";
 import {
   Switch,
   Route,
-  NavLink,
-  Link
+  NavLink
 } from "react-router-dom";
 import Details from "./Details";
+const KEY = "AIzaSyBseWKhYPoOpRVoODtWoYBSvSUk_VOrjsU";
+const PL_ID = "PLV7_SDtanVwgaQ0ReDzE16NlkkbmVGeiw";
+const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${PL_ID}&key=${KEY}`;
 
 class Recent extends Component {
-	componentDidMount() {
-		document.title = "Most Recent"
-	  };
-	
-	  
-		
-  render() {
-    return (
-		<div>
-      <h1>Most Recent</h1>
-     
-        <div class="row">
-        
-          <div class="col-lg-3">
-            <NavLink to="/Details"><img  src="img\cats\1.jpg" class="zoom img-fluid"  alt=""/></NavLink>
-          </div>
-          
-          <div class="col-lg-3">
-          <NavLink to="/Details"><img  src="img\cats\2.jpg" class="zoom img-fluid "  alt=""/></NavLink>
-          </div>
-          
-          <div class="col-lg-3">
-          <NavLink to="/Details"><img  src="img\cats\3.jpg" class="zoom img-fluid "  alt=""/></NavLink>
-          </div>
-          
-            <div class="col-lg-3">
-            <NavLink to="/Details"><img  src="img\dogs\1.jpg" class="zoom img-fluid "  alt=""/></NavLink>
-          </div>
-          
-            <div class="col-lg-3">
-            <NavLink to="/Details"><img  src="img\dogs\2.jpg" class="zoom img-fluid "  alt=""/></NavLink>
-          </div>
-          
-            <div class="col-lg-3">
-            <NavLink to="/Details"><img  src="img\dogs\3.jpg" class="zoom img-fluid "  alt=""/></NavLink>
-          </div>
-          
-            <div class="col-lg-3">
-            <NavLink to="/Details"><img  src="img\trees\1.jpg" class="zoom img-fluid "  alt=""/></NavLink>
-          </div>
-          
-          <div class="col-lg-3">
-          <NavLink to="/Details"><img  src="img\trees\2.jpg" class="zoom img-fluid "  alt=""/></NavLink>
-          </div>
-          
-          <div class="col-lg-3">
-          <NavLink to="/Details"><img  src="img\trees\3.jpg" class="zoom img-fluid "  alt=""/></NavLink>
-          </div>
-          <Switch>
-            <Route path="/Details" component={Details}/>
-          </Switch>
-        </div>
-        
-      
-	</div>
-	
-	);
-	
+  constructor(props) {
+    super(props);
+    this.state = {
+      error: null,
+      isLoaded: false,
+      videodata: []
+    };
   }
-  
+  componentDidMount() {
+    document.title = "Videos";
+    fetch(url)
+      .then(res => res.json())
+      .then(
+        (result) => {
+          this.setState({
+            isLoaded: true,
+            videodata: result.items
+          })
+          console.log(this.state.videodata);
+        },
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            error
+          });
+        }
+      )
+  }
+  render() {
+    const { error, isLoaded, videodata } = this.state;
+    if (error) {
+      return <div>Error: {error.message}</div>;
+    } else if (!isLoaded) {
+      return <div>Loading...</div>;
+    } else {
+      return (
+        <div>
+          <h1>Videos</h1>     
+            <div class="row">
+                  {videodata.map(item => (
+                    <div class="col-lg-11" key={item.snippet.resourceId.videoId} >
+                      <a href={`https://www.youtube.com/watch?v=${item.snippet.resourceId.videoId}`}><img src={item.snippet.thumbnails.maxres.url} class="zoom img-fluid "/></a>
+                    </div>
+                  ))}      
+              <Switch>
+                <Route path="/Details" component={Details}/>
+              </Switch>
+            </div>
+        </div>
+      );	
+    }
+  }
 }
 export default Recent;

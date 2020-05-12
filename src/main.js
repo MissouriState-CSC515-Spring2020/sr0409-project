@@ -22,7 +22,7 @@ class Main extends Component {
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav mr-auto justify-content-center">
 						<li class="nav-item">
-						<NavLink to="/Recent" class="nav-link">Most Recent</NavLink>
+						<NavLink to="/Recent" class="nav-link">Videos</NavLink>
 						</li>
 						<li class="nav-item">
 						<NavLink to="/Cats" class="nav-link">Cats</NavLink>

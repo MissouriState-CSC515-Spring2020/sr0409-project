@@ -1,12 +1,12 @@
 
 {
-    "name": "Photo Gallery",
+    "name": "Cat Videos",
     "short_name": "Photos",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#fff",
     "theme_color":"#989898",
-    "description": "A Photo Gallery",
+    "description": "A Cat Video Gallery",
     "icons": [{
       
         "src": "/img/icon192.png",
