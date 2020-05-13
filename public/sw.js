@@ -1,11 +1,10 @@
 console.log("SW Started");
 const CACHE_NAME = 'ourcache';
-  const OFFLINE_URL = 'offline';
-  let urlsToCache = [
+const OFFLINE_URL = 'offline';
+let urlsToCache = [
     'manifest.json',
-    '/',
-    'styles.css',
-    'bundle.js'
+    '/dist/index.js',
+    'styles.css'
   ];
 
   self.addEventListener('install', function(event) {

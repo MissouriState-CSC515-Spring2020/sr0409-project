@@ -4,9 +4,11 @@ import {
   NavLink,
   Switch
 } from "react-router-dom";
-import Recent from "./Recent";
-import Details from "./Details";
-import Cats from "./Cats";
+
+import Recent from "./recent"
+import LazyCats from "./LazyCats"
+import LazyDetails from "./LazyDetails"
+
 class Main extends Component {
 	
   render() {
@@ -39,8 +41,8 @@ class Main extends Component {
 				<Switch>
 					<Route exact path="/" component={Recent}/>
 					<Route path="/Recent" component={Recent}/>
-					<Route path="/Cats" component={Cats}/>
-					<Route path="/Details" component={Details}/>
+					<Route path="/Cats" component={LazyCats}/>
+					<Route path="/Details" component={LazyDetails}/>
 				</Switch>
 				
 			</div>
